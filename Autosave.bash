@@ -1,16 +1,11 @@
 #!/bin/bash
 
-TIMESTAMP=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
-echo "$TIMESTAMP"
+TIMESTAMP=$(date -u +"%Y%m%dT%H%M%SZ")
 
 SCRIPT_DIR="$(dirname "$(realpath "$0")")"
-echo "$SCRIPT_DIR"
 
-cd "$SCRIPT_DIR" || exit
-pwd
+git add "$SCRIPT_DIR"
 
-git add .
-
-git commit -m "init"
+git commit -m "$TIMESTAMP"
 
 git push
